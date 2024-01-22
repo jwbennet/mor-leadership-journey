@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>James Bennett'S Leadership Journey - MOR Leadership Workshop</title>
+
+    <link href="//assets.iu.edu/favicon.ico" rel="shortcut icon" />
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/iu.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <section class="nofooter">
+          <img src="img/iu-logo-top-tail.svg" style="position: absolute; left: 0; top: 0; width: 10%; background: inherit; border: 0; box-shadow: none;" />
+          <h3 style="margin-top: 5%; margin-bottom: 4em; margin-left: 13%; text-align: left; font-size: 1.25em; text-transform: uppercase;">
+            My Leadership Journey<br/>
+            <!-- <small style="color: #999;">A Platform for Application Development</small> -->
+          </h3>
+          <div style="float: left; text-align: left; color: #666">
+            <strong>James Bennett</strong><br />
+            <small>Enterprise Platforms, Indiana University</small><br />
+          </div>
+        </section>
+        <section data-background-image="img/presentation.jpg">
+          <h3 class="textbox fragment fade-in-then-out">Presence and persuasion <br /> help get the job done</h3>
+        </section>
+        <section data-background-image="img/customer-service.jpg">
+          <h3 class="textbox fragment fade-in-then-out">The power of customer service and connections</h3>
+        </section>
+        <section data-background-image="img/code-review.jpg">
+          <h3 class="textbox fragment fade-in" style="margin-bottom: 0;">Feedback is a gift</h3>
+          <h3 class="textbox fragment fade-in" style="margin-top: 0;">when given with care</span></h3>
+        </section>
+        <section data-background-image="img/support.jpg" data-background-position="50% 55%">
+          <h3 class="textbox fragment fade-in-then-out">Many people have supported me along the way</h3>
+        </section>
+        <section data-background-image="img/lego-space.webp">
+          <h3 class="textbox fragment fade-in" style="margin-bottom: 0;">Vision and purpose are powerful</h3>
+        </section>
+        <section data-background-image="img/lost.jpg" data-background-transition="fade-out">
+        </section>
+        <section data-background-image="img/success.jpg">
+          <h3 class="textbox" style="margin-bottom: 0;">Vision and purpose are powerful</h3>
+          <h3 class="textbox fragment fade-in" style="margin-top: 0;">but gratitude and culture are more meaningful</h3>
+        </section>
+        <div id="footer" class="footer" style="display: none;">
+          <img src="img/iu-logo.svg" />
+          <span style="text-align: left; width: 15em; margin-top: 1%;">MOR Leadership Workshop</span>
+        </div>
+        <div id="image-credit" style="display: none;"></div>
+			</div>
+    </div>
+    <div id="background" style="display: none;"></div>
+
+		<script src="dist/reveal.js"></script>
+    <script src="dist/highlight.js"></script>
+		<!-- <script src="plugin/notes/notes.js"></script> -->
+		<!-- <script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script> -->
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+        hash: true,
+        navigationMode: 'linear',
+        history: false,
+        controls: true,
+        progress: true,
+        overview: true,
+        plugins: [ RevealHighlight ],
+      });
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        var suppressFooter = event.currentSlide.classList.contains('nofooter');
+        var hasBackgroundImage = event.currentSlide.attributes.getNamedItem('data-background-image') !== null || event.currentSlide.attributes.getNamedItem('data-background-video') !== null;
+				if(suppressFooter || hasBackgroundImage) {
+					document.getElementById('footer').style.display = 'none';
+				} else {
+					document.getElementById('footer').style.display = 'flex';
+        }
+        
+        var suppressBackground = !event.currentSlide.classList.contains('has-background');
+        if(suppressBackground || hasBackgroundImage) {
+					document.getElementById('background').style.display = 'none';
+				} else {
+					document.getElementById('background').style.display = 'block';
+        }
+
+        var showImageCredit = event.currentSlide.classList.contains('has-image-credit');
+        if(showImageCredit) {
+          document.getElementById('image-credit').innerHTML = event.currentSlide.getElementsByClassName('image-credit')[0].innerHTML;
+          document.getElementById('image-credit').style.display = 'block';
+        } else {
+          document.getElementById('image-credit').innerHTML = null;
+          document.getElementById('image-credit').style.display = 'none';
+        }
+			} );
+		</script>
+	</body>
+</html>

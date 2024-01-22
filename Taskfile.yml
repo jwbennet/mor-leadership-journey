@@ -1,0 +1,22 @@
+version: '3'
+
+tasks:
+  dev:
+    desc: Ensure dependencies are installed and start a development server
+    cmds:
+      - task: setup
+      - task: run
+  setup:
+    desc: Install dependencies and setup the project for use
+    cmds:
+      - npm install
+    silent: true
+  run:
+    desc: Run the development server featuring hot reload of slides 
+    cmds:
+      - npm start
+    silent: true
+  default:
+    cmds:
+      - task --list
+    silent: true
